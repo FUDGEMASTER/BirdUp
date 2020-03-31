@@ -10,7 +10,6 @@ from pathlib import Path
 num_of_images_per_search = 50
 
 this_file = path.abspath(path.dirname(__file__))
-source = this_file / Path(r'bing')
 parent_dir = this_file / Path(r'Completed Queries')
 
 species = ["Black Capped Chickadee", "Dark Eyed Junco", "Downy Woodpecker", "Male Northern Cardinal", "Mourning Dove", "Blue Jay", "White Breasted Nuthatch", "American Robin", "Song Sparrow", "Common Grackle",
@@ -25,9 +24,15 @@ def search_and_dump(query, quantity):
         mkdir(new_search_folder)
     except FileExistsError:
         pass
-    run(['python', this_file / Path(r''), '-s',
-         '\"{}\"'.format(query), '-o', '{}'.format(new_search_folder), '--limit', '{}'.format(quantity)])
+    # not bothering making BBID a relative path since the script is not repeated
+    run(['python', r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\BBID.py' , '-s',
+         '\"{}\"'.format(query), '-o', r'{}'.format(new_search_folder), '--limit', '{}'.format(quantity)])
 
+
+try:
+    mkdir(parent_dir)
+except FileExistsError:
+    pass
 for i in range(len(species)):
     search_and_dump(species[i], num_of_images_per_search)
 

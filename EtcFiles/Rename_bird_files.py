@@ -28,37 +28,37 @@ bird_species = [
 
 
 bird_species_files = [
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\American Crow'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\American Goldfinch'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\American Robin'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Black Capped Chickadee'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Blue Jay'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Brown Headed Cowbird'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Common Grackle'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Dark Eyed Junco'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Downy Woodpecker'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\European Starling'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Hairy Woodpecker'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\House Finch'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\House Sparrow'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Male Northern Cardinal'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Mourning Dove'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Purple Finch'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Red Bellied Woodpecker'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Red Winged Blackbird'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Song Sparrow'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Tufted Titmouse'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\White Breasted Nuthatch')
+    "C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\American Crow"
+    "C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\American Goldfinch"
+    "C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\American Robin"
+    "C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Black Capped Chickadee"
+    "C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Blue Jay"
+    "C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Brown Headed Cowbird"
+    "C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Common Grackle"
+    "C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Dark Eyed Junco"
+    "C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Downy Woodpecker"
+    "C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\European Starling"
+    "C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Hairy Woodpecker"
+    "C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\House Finch"
+    "C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\House Sparrow"
+    "C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Male Northern Cardinal"
+    "C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Mourning Dove"
+    "C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Purple Finch"
+    "C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Red Bellied Woodpecker"
+    "C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Red Winged Blackbird"
+    "C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Song Sparrow"
+    "C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Tufted Titmouse"
+    "C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\White Breasted Nuthatch"
 ]
 
-base_path = Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries')
+base_path = Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\One_Of_Each_Bird')
 
 i = 0
-j = 20
+j=4
 # for j in range(len(bird_species)):
 #     os.system('cd {}'.format(bird_species_files[j]))
 for filename in os.listdir(base_path / bird_species[j]):
-    new_filename = bird_species[j] + "_" + str(i) + ".jpg"
+    new_filename = bird_species[j] + "__" + str(i) + ".jpg"
     os.rename(filename, new_filename) 
     i -= -1
     

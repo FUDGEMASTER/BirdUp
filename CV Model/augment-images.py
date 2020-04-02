@@ -29,33 +29,33 @@ bird_species = [
     'White Breasted Nuthatch'
 ]
 bird_species_files = [
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\American Crow'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\American Goldfinch'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\American Robin'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Black Capped Chickadee'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Blue Jay'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Brown Headed Cowbird'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Common Grackle'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Dark Eyed Junco'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Downy Woodpecker'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\European Starling'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Hairy Woodpecker'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\House Finch'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\House Sparrow'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Male Northern Cardinal'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Mourning Dove'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Purple Finch'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Red Bellied Woodpecker'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Red Winged Blackbird'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Song Sparrow'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Tufted Titmouse'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\White Breasted Nuthatch')
+    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Backyard-Bird-Dataset\train75\American Crow'),
+    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Backyard-Bird-Dataset\train75\American Goldfinch'),
+    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Backyard-Bird-Dataset\train75\American Robin'),
+    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Backyard-Bird-Dataset\train75\Black Capped Chickadee'),
+    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Backyard-Bird-Dataset\train75\Blue Jay'),
+    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Backyard-Bird-Dataset\train75\Brown Headed Cowbird'),
+    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Backyard-Bird-Dataset\train75\Common Grackle'),
+    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Backyard-Bird-Dataset\train75\Dark Eyed Junco'),
+    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Backyard-Bird-Dataset\train75\Downy Woodpecker'),
+    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Backyard-Bird-Dataset\train75\European Starling'),
+    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Backyard-Bird-Dataset\train75\Hairy Woodpecker'),
+    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Backyard-Bird-Dataset\train75\House Finch'),
+    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Backyard-Bird-Dataset\train75\House Sparrow'),
+    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Backyard-Bird-Dataset\train75\Male Northern Cardinal'),
+    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Backyard-Bird-Dataset\train75\Mourning Dove'),
+    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Backyard-Bird-Dataset\train75\Purple Finch'),
+    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Backyard-Bird-Dataset\train75\Red Bellied Woodpecker'),
+    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Backyard-Bird-Dataset\train75\Red Winged Blackbird'),
+    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Backyard-Bird-Dataset\train75\Song Sparrow'),
+    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Backyard-Bird-Dataset\train75\Tufted Titmouse'),
+    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Backyard-Bird-Dataset\train75\White Breasted Nuthatch')
 ]
 
 # =============================================
 # this loops through all pictures in a subdir
 
-j = 20
+j = 0
 
 # =============================================
 
@@ -113,10 +113,20 @@ for filename in os.listdir(base_path):
         continue
 
 i = 0
+### renames all files to gibberish. Its useful, I swear
+# for filename in os.listdir(base_path):
+#     try:
+#         new_filename = randomString() + ".jpg"
+#         os.rename(filename, new_filename) 
+#         i -= -1
+#         print('Image renamed sucessfully')
+#     except PermissionError:
+#         print('ERROR: NAMING')
+#         continue
 
 for filename in os.listdir(base_path):
     try:
-        new_filename = bird_species[j] + "__" + str(i) + ".jpg"
+        new_filename = bird_species[j] + '_train_' + "__" + str(i) + ".jpg"
         os.rename(filename, new_filename) 
         i -= -1
         print('Image renamed sucessfully')

@@ -5,6 +5,7 @@ import PIL
 import string
 import random
 import pyautogui
+
 bird_species = [
     'American Crow',
     'American Goldfinch',

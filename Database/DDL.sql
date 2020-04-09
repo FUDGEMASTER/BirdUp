@@ -6,7 +6,9 @@ DROP TABLE IF EXISTS Feed_Mix;
 
 CREATE TABLE IF NOT EXISTS Feed_Mix(
         feed_Id INTEGER PRIMARY KEY ,
-        feed_Type varchar (50)
+        feed_Brand varchar (50),
+        feed_Type varchar (50),
+        price_per_pound varchar(50)
         );
 
 CREATE TABLE IF NOT EXISTS Recognizable (
@@ -29,31 +31,49 @@ CREATE TABLE IF NOT EXISTS Recognized(
               );
 
 INSERT INTO Feed_Mix( 
-                        feed_Type
+                        feed_Brand,
+                        feed_Type,
+                        price_per_pound
                     ) 
                 VALUES(
-                    'Millet'
+                    'Brandless',
+                    'Millet',
+                    '5.86'
                 ) ,
                 (
-                    'Suet'
+                    'Brandless',
+                    'Suet',
+                    '10.00'
                 ) ,
                 (
-                    'Black Oil Sunflower Seed'
+                    'Brandless',
+                    'Black Oil Sunflower Seed',
+                    '3.96'
                 ) ,
                 (
-                    'Corn'
+                    'Brandless',
+                    'Corn',
+                    '1.19'
                 ),
                 (
-                    'Hulled Sunflower Seed'
+                    'Brandless',
+                    'Hulled Sunflower Seed',
+                    '1.99'
                 ),
                 (
-                    'Safflower'
+                    'Brandless',
+                    'Safflower',
+                    '1.75'
                 ),
-                (    
-                    'Milo'
+                ( 
+                    'Brandless',   
+                    'Milo',
+                    '1.68'
                 ),
-                (   
-                    'Nyjer'
+                (  
+                    'Brandless', 
+                    'Nyjer',
+                    '1.66'
                 )
                 ;
                 

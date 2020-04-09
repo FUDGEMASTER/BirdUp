@@ -29,6 +29,7 @@ bird_species = [
     'Tufted Titmouse',
     'White Breasted Nuthatch'
 ]
+
 bird_species_files = [
     Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\American Crow'),
     Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\American Goldfinch'),

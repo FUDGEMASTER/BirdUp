@@ -1,22 +1,63 @@
-DROP TABLE IF EXISTS Entry;
+DROP TABLE IF EXISTS Recognized;
 
-DROP TABLE IF EXISTS Bird;
+DROP TABLE IF EXISTS Recognizable;
 
 DROP TABLE IF EXISTS Feed_Mix;
 
-CREATE TABLE IF NOT EXISTS Entry(
-        entry_Id     INTEGER     REFERENCES     Bird(bird_Id),
+CREATE TABLE IF NOT EXISTS Feed_Mix(
+        feed_Id INTEGER PRIMARY KEY ,
+        feed_Type varchar (50)
+        );
+
+CREATE TABLE IF NOT EXISTS Recognizable (
+        bird_Id     INTEGER     PRIMARY KEY ,
+        common_Name     varchar (50) ,
+        scientific_Name     varchar (50) ,
+        conservation_Status     varchar (50) ,
+        eats     INTEGER     REFERENCES     Feed_Mix(feed_Id)
+            );
+
+CREATE TABLE IF NOT EXISTS Recognized(
+        entry_Id     INTEGER     REFERENCES     Recognizable(bird_Id),
         common_Name     varchar (50),
         wiki_link     varchar(255),
         conservation_Status     varchar (50) ,
         eats     int     REFERENCES     Feed_Mix(feed_Id),
         place_Seen     VARCHAR(255),
         seen_Date     DATETIME     DEFAULT     CURRENT_DATE ,
-        seen_time     DATETIME     DEFAULT     CURRENT_TIME,
-        entry_Pic    blob
+        seen_time     DATETIME     DEFAULT     CURRENT_TIME
               );
 
-INSERT INTO Entry (
+INSERT INTO Feed_Mix( 
+                        feed_Type
+                    ) 
+                VALUES(
+                    'Millet'
+                ) ,
+                (
+                    'Suet'
+                ) ,
+                (
+                    'Black Oil Sunflower Seed'
+                ) ,
+                (
+                    'Corn'
+                ),
+                (
+                    'Hulled Sunflower Seed'
+                ),
+                (
+                    'Safflower'
+                ),
+                (    
+                    'Milo'
+                ),
+                (   
+                    'Nyjer'
+                )
+                ;
+                
+INSERT INTO Recognized (
                 entry_Id , 
                 common_Name , 
                 wiki_link , 
@@ -24,8 +65,7 @@ INSERT INTO Entry (
                 eats , 
                 place_Seen , 
                 seen_Date , 
-                seen_Time ,
-                entry_Pic)
+                seen_Time )
             VALUES
                 (
                 1 , 
@@ -55,21 +95,11 @@ INSERT INTO Entry (
                 CURRENT_TIME )
 ;
 
-CREATE TABLE IF NOT EXISTS Bird(
-        bird_Id     INTEGER     PRIMARY KEY ,
-        common_Name     varchar (50) ,
-        scientific_Name     varchar (50) ,
-        conservation_Status     varchar (50) ,
-        eats     INTEGER     REFERENCES     Feed_Mix(feed_Id),
-        bird_Pic    blob
-            );
-
-INSERT INTO Bird( 
+INSERT INTO Recognizable( 
                 common_Name , 
                 scientific_Name , 
                 conservation_Status , 
-                eats,
-                bird_Pic
+                eats
                 )
                 VALUES
                 (
@@ -179,50 +209,13 @@ INSERT INTO Bird(
                     'Least Concern', 
                     5)
                 ;
-
-CREATE TABLE IF NOT EXISTS Feed_Mix(
-        feed_Id INTEGER PRIMARY KEY ,
-        feed_Type varchar (50)
-        );
-
-INSERT INTO Feed_Mix( 
-                        feed_Type
-                    ) 
-                VALUES(
-                    'Millet'
-                ) ,
-                (
-                    'Suet'
-                ) ,
-                (
-                    'Black Oil Sunflower Seed'
-                ) ,
-                (
-                    'Corn'
-                ),
-                (
-                    'Hulled Sunflower Seed'
-                ),
-                (
-                    'Safflower'
-                ),
-                (    
-                    'Milo'
-                ),
-                (   
-                     'Nyjer'
-                )
-                ;
                 
-
-
-SELECT          Bird.bird_Id, 
-                Bird.common_Name, 
-                Bird.scientific_Name, 
-                Bird.conservation_Status,
-                Feed_Mix.feed_Type,
-                Bird.bird_Pic
-FROM            Bird
+SELECT          Recognizable.bird_Id, 
+                Recognizable.common_Name, 
+                Recognizable.scientific_Name, 
+                Recognizable.conservation_Status,
+                Feed_Mix.feed_Type
+FROM            Recognizable
 INNER JOIN      Feed_Mix on
-                Bird.eats = Feed_Mix.feed_Id; 
+                Recognizable.eats = Feed_Mix.feed_Id; 
 

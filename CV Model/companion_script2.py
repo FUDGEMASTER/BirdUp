@@ -1,9 +1,3 @@
-# Makes sure 64 bit Python is running, or tf won't work.
-import platform
-if platform.architecture()[0] != '64bit':
-    print('Please run on 64 bit Python')
-    exit()
-
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import backend as K
@@ -13,9 +7,19 @@ from tensorflow.keras.metrics import categorical_crossentropy
 from tensorflow.keras import regularizers
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.models import Model, load_model, Sequential
+from tensorflow.keras.preprocessing import image
 import numpy as np
+import matplotlib.pyplot as plt
 import time
 import os
+# from IPython.core.display import display, HTML
+# display(HTML("<style>.container { width:100% !important; }</style>"))
+# import the necessary packages
+import platform
+if platform.architecture()[0] != '64bit':
+    print('Please run on 64 bit Python')
+    exit()
+
 from PIL import Image
 
 
@@ -46,13 +50,14 @@ input_file = open(r"C:\Users\kirby\Desktop\BirdUp\CV Model\INPUT_FROM_GUI.txt","
 # imagePath = args["images"]
 
 # resized input image to what the testing images were
-try:
-    image = Image.open(imagePath)
-    image.thumbnail((300, 300))
-    image.save(imagePath)
-    print('[INFO] Image resized successfully')
-except (OSError, ValueError):
-    print('ERROR: RESIZING')
+# image = ""
+# try:
+#     image = Image.open(imagePath)
+#     image.thumbnail((300, 300))
+#     image.save(imagePath)
+#     print('[INFO] Image resized successfully')
+# except (OSError, ValueError):
+#     print('ERROR: RESIZING')
 
 # dimensions of our images
 img_width, img_height = 224, 224
@@ -70,6 +75,7 @@ x = np.expand_dims(x, axis=0)
 
 images = np.vstack([x])
 classes = model.predict(images, batch_size=10)
+classes = classes[0]
 print (classes)
 
 # ==============================================================================

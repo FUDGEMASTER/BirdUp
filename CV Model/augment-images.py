@@ -31,27 +31,27 @@ bird_species = [
 ]
 
 bird_species_files = [
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\American Crow'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\American Goldfinch'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\American Robin'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Black Capped Chickadee'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Blue Jay'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Brown Headed Cowbird'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Common Grackle'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Dark Eyed Junco'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Downy Woodpecker'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\European Starling'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Hairy Woodpecker'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\House Finch'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\House Sparrow'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Male Northern Cardinal'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Mourning Dove'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Purple Finch'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Red Bellied Woodpecker'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Red Winged Blackbird'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Song Sparrow'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\Tufted Titmouse'),
-    Path(r'C:\Users\kirby\Desktop\BirdUp\EtcFiles\Completed Queries\White Breasted Nuthatch')
+    Path(r'EtcFiles\One-Of-Each-Bird\American_Crow.jpg'),
+    Path(r'EtcFiles\One-Of-Each-Bird\American_Goldfinch.jpg'),
+    Path(r'EtcFiles\One-Of-Each-Bird\American_Robin.jpg'),
+    Path(r'EtcFiles\One-Of-Each-Bird\Black_Capped_Chickadee.jpg'),
+    Path(r'EtcFiles\One-Of-Each-Bird\Blue_Jay.jpg'),
+    Path(r'EtcFiles\One-Of-Each-Bird\Brown_Headed_Cowbird.jpg'),
+    Path(r'EtcFiles\One-Of-Each-Bird\Common_Grackle.jpg'),
+    Path(r'EtcFiles\One-Of-Each-Bird\Dark_Eyed_Junco.jpg'),
+    Path(r'EtcFiles\One-Of-Each-Bird\Downy_Woodpecker.jpg'),
+    Path(r'EtcFiles\One-Of-Each-Bird\European_Starling.jpg'),
+    Path(r'EtcFiles\One-Of-Each-Bird\Hairy_Woodpecker.jpg'),
+    Path(r'EtcFiles\One-Of-Each-Bird\House_Finch.jpg'),
+    Path(r'EtcFiles\One-Of-Each-Bird\House_Sparrow.jpg'),
+    Path(r'EtcFiles\One-Of-Each-Bird\Male_Northern_Cardinal.jpg'),
+    Path(r'EtcFiles\One-Of-Each-Bird\Mourning_Dove.jpg'),
+    Path(r'EtcFiles\One-Of-Each-Bird\Purple_Finch.jpg'),
+    Path(r'EtcFiles\One-Of-Each-Bird\Red_Bellied_Woodpecker.jpg'),
+    Path(r'EtcFiles\One-Of-Each-Bird\Red_Winged_Blackbird.jpg'),
+    Path(r'EtcFiles\One-Of-Each-Bird\Song_Sparrow.jpg'),
+    Path(r'EtcFiles\One-Of-Each-Bird\Tufted_Titmouse.jpg'),
+    Path(r'EtcFiles\One-Of-Each-Bird\White_Breasted_Nuthatch.jpg')
 ]
 
 # =============================================

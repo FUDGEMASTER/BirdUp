@@ -72,6 +72,7 @@ bird_species = [
     'Tufted Titmouse',
     'White Breasted Nuthatch'
 ]
+
 # # construct the argument parser and parse the arguments
 # ap = argparse.ArgumentParser()
 # ap.add_argument("-i", "--images", required=True,

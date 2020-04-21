@@ -1,0 +1,7 @@
+# always ignore
+.vscode
+Database\updatedBird.db
+
+# I/O text files from predictor.py
+CV Model\INPUT_FROM_GUI.txt
+CV Model\OUTPUT_TO_GUI.txt

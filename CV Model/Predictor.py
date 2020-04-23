@@ -1,3 +1,9 @@
+# needs to perform this check BEFORE tf and keras are imported
+import platform
+if platform.architecture()[0] != '64bit':
+    print('Please run on 64 bit Python')
+    exit()
+
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import backend as K
@@ -14,21 +20,26 @@ import time
 import os
 from IPython.core.display import display, HTML
 display(HTML("<style>.container { width:100% !important; }</style>"))
-
-# needs to perform this check BEFORE tf and keras are imported
-import platform
-if platform.architecture()[0] != '64bit':
-    print('Please run on 64 bit Python')
-    exit()
-
 from PIL import Image
-
-input_file = open(r"CV Model\INPUT_FROM_GUI.txt","r")
 
 # =============================================
 # change to CHARLES if you are running this
-USER = 'FINAL'
+USER = 'KIRBY'
 # =============================================
+
+
+####### SANTINO CHANGE THIS ##############################
+input_file = open(r"CV Model\INPUT_FROM_GUI.txt","r")
+
+if USER == 'KIRBY':
+	input_file = open(r"CV Model\INPUT_FROM_GUI.txt","r")
+elif USER == 'CHARLES':
+	input_file = open(r"CV Model\INPUT_FROM_GUI.txt","r")
+elif USER == 'FINAL':
+    input_file = open(r"CV Model\INPUT_FROM_GUI.txt","r")
+elif USER == 'PIZZA':
+	input_file = open(r"","r") ###### SANTINO PUT YOUR OUTPUT FILE HERE
+
 # we really should have just done this through git and used relative path... whatevs
 
 # We switch between each of our computers with no git, so this is how we are doing it
@@ -39,6 +50,10 @@ elif USER == 'CHARLES':
 elif USER == 'FINAL':
     # using relative path since it will be in this directory correctly. 
     path_to_h5 = r'CV Model\birds-224-224-97.64.h5'
+elif USER == 'PIZZA':
+	path_to_h5 = r'' ####### SANTINO PUT YOUR H5 FILE PATH HERE INSIDE THE SINGLE QUOTES
+
+
 
 if USER == 'KIRBY':
 	imagePath = r'C:\Users\kirby\Desktop\BirdUp\Database\One-Of-Each-Bird\Blue_Jay.jpg'
@@ -46,6 +61,8 @@ elif USER == 'CHARLES':
 	imagePath = r'C:\Users\meser\Backyard-Bird-Dataset\test\American Crow\zoyojqhxjt.jpg'
 elif USER == 'FINAL':
     imagePath = input_file.read()
+elif USER == 'PIZZA':
+	imagePath = input_file.read()
 
 input_file.close()
 
@@ -127,7 +144,16 @@ not_bird = min(dickt, key=dickt.get)
 print("We think this bird is a {}".format(final_bird))
 print("We are least confident this bird is a {}".format(not_bird))
 
-output_file = open(r"C:\Users\kirby\Desktop\BirdUp\CV Model\OUTPUT_TO_GUI.txt","w")
+output_file = ""
+
+if USER == 'KIRBY':
+	output_file = open(r"C:\Users\kirby\Desktop\BirdUp\CV Model\OUTPUT_TO_GUI.txt","w")
+elif USER == 'CHARLES':
+	output_file = open(r"","w")
+elif USER == 'FINAL':
+    output_file = open(r"","w")
+elif USER == 'PIZZA':
+	output_file = open(r"","w") ###### SANTINO PUT YOUR OUTPUT FILE HERE
 
 output_file.write(final_bird)
 output_file.close()
